@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:App1.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <vm:MainViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" FontSize="32" Grid.Row="0" Text="{Binding TextBox, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox TextWrapping="Wrap" AcceptsReturn="True" FontSize="32" Grid.Row="1" Text="{Binding TextBox,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <HyperlinkButton Grid.Column="0" Content="Page2" Click="HyperlinkButton_Click" Width="auto" Height="auto" FontSize="50em" HorizontalAlignment="Center"/>
+            <HyperlinkButton Grid.Column="1" Content="New Window" Click="HyperlinkButton_Click_1" Width="auto" Height="auto" FontSize="50em" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Page>

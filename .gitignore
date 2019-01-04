@@ -1,0 +1,4 @@
+.vs
+*.pfx
+App1/bin/
+App1/obj/
